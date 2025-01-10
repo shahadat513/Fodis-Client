@@ -14,8 +14,10 @@ const Navbar = () => {
     };
 
     return (
-        <div style={{ backgroundColor: isDarkMode ? '#1a1a1a' : '#f3f4f6', color: isDarkMode ? '#ffffff' : '#000000' }}>
-            <div className="navbar w-11/12 mx-auto">
+        <div 
+        className="sticky top-0 z-50 bg-transparent backdrop-blur-sm"
+        style={{ backgroundColor: isDarkMode ? '#1a1a1a' : '#f3f4f6', color: isDarkMode ? '#ffffff' : '#000000' }}>
+            <div className="navbar w-11/12 mx-auto ">
                 {/* Navbar Start */}
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -54,6 +56,12 @@ const Navbar = () => {
                             <NavLink to="/myFood"
                                 className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
                             ><li><a>My Added Food</a></li></NavLink>
+                            <NavLink to="/about"
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
+                            ><li><a>About</a></li></NavLink>
+                            <NavLink to="/contact"
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
+                            ><li><a>Contact Us</a></li></NavLink>
                         </ul>
                     </div>
                     <NavLink to="/"><a className="btn btn-ghost font-bold text-3xl">
@@ -83,6 +91,12 @@ const Navbar = () => {
                         <NavLink to="/myFood"
                             className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
                         ><li><a>My Added Food</a></li></NavLink>
+                        <NavLink to="/about"
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
+                        ><li><a>About</a></li></NavLink>
+                        <NavLink to="/contact"
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
+                        ><li><a>Contact Us</a></li></NavLink>
                     </ul>
                 </div>
                 {/* Navbar End */}

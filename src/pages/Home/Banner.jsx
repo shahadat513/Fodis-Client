@@ -30,7 +30,7 @@ const Banner = () => {
             >
                 <SwiperSlide>
                     <div
-                        className="hero md:h-[480px] h-96 "
+                        className="hero h-80 "
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/89sNZZQ/pexels-fotios-photos-1126728.jpg)",
                         }}>
@@ -50,7 +50,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="hero md:h-[480px] h-96"
+                        className="hero h-80"
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/0cQcDC0/pexels-life-of-pix-67468.jpg)",
                         }}>
@@ -70,7 +70,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="hero md:h-[480px] h-96"
+                        className="hero h-80"
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/Sxnmt3C/pexels-elletakesphotos-2696064.jpg)",
                         }}>
