@@ -39,29 +39,41 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to="/"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>Home</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>Home</a></li>
+                            </NavLink>
                             <NavLink to="/allFoods"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>All Foods</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>All Foods</a></li>
+                            </NavLink>
                             <NavLink to="/gallery"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>Gallery</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>Gallery</a></li>
+                            </NavLink>
                             <NavLink to="/MyOrders"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>My Orders</a></li></NavLink>
-                            <NavLink to="/addFood"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>Add Food</a></li></NavLink>
-                            <NavLink to="/myFood"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>My Added Food</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>My Orders</a></li>
+                            </NavLink>
+                            {user && (
+                                <>
+                                    <NavLink to="/addFood"
+                                        className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                        <li><a>Add Food</a></li>
+                                    </NavLink>
+                                    <NavLink to="/myFood"
+                                        className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                        <li><a>My Added Food</a></li>
+                                    </NavLink>
+                                </>
+                            )}
                             <NavLink to="/about"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>About</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>About</a></li>
+                            </NavLink>
                             <NavLink to="/contact"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                            ><li><a>Contact Us</a></li></NavLink>
+                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                <li><a>Contact Us</a></li>
+                            </NavLink>
                         </ul>
                     </div>
                     <NavLink to="/"><a className="btn btn-ghost font-bold text-3xl">
@@ -74,29 +86,41 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <NavLink to="/"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>Home</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>Home</a></li>
+                        </NavLink>
                         <NavLink to="/allFoods"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>All Foods</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>All Foods</a></li>
+                        </NavLink>
                         <NavLink to="/gallery"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>Gallery</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>Gallery</a></li>
+                        </NavLink>
                         <NavLink to="/MyOrders"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>My Orders</a></li></NavLink>
-                        <NavLink to="/addFood"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>Add Food</a></li></NavLink>
-                        <NavLink to="/myFood"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>My Added Food</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>My Orders</a></li>
+                        </NavLink>
+                        {user && (
+                            <>
+                                <NavLink to="/addFood"
+                                    className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                    <li><a>Add Food</a></li>
+                                </NavLink>
+                                <NavLink to="/myFood"
+                                    className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                    <li><a>My Added Food</a></li>
+                                </NavLink>
+                            </>
+                        )}
                         <NavLink to="/about"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>About</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>About</a></li>
+                        </NavLink>
                         <NavLink to="/contact"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}
-                        ><li><a>Contact Us</a></li></NavLink>
+                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                            <li><a>Contact Us</a></li>
+                        </NavLink>
                     </ul>
                 </div>
                 {/* Navbar End */}
@@ -133,9 +157,15 @@ const Navbar = () => {
                             </div>
                             {isDropdownOpen && (
                                 <div className="dropdown-menu absolute top-24 mt-2 w-48 bg-white rounded shadow-lg z-10">
-                                    <NavLink to="/myFood"><div><a className="block px-4 py-2 text-gray-800">My Foods</a></div></NavLink>
-                                    <NavLink to="/addFood"><div><a className="block px-4 py-2 text-gray-800">Add Food</a></div></NavLink>
-                                    <NavLink to="/MyOrders"><div><a className="block px-4 py-2 text-gray-800">My Orders</a></div></NavLink>
+                                    <NavLink to="/myFood">
+                                        <div><a className="block px-4 py-2 text-gray-800">My Foods</a></div>
+                                    </NavLink>
+                                    <NavLink to="/addFood">
+                                        <div><a className="block px-4 py-2 text-gray-800">Add Food</a></div>
+                                    </NavLink>
+                                    <NavLink to="/MyOrders">
+                                        <div><a className="block px-4 py-2 text-gray-800">My Orders</a></div>
+                                    </NavLink>
                                 </div>
                             )}
                             <button onClick={handleLogOut} className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 btn-secondary">

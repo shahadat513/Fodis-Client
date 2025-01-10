@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useNavigate,} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const AllFoods = () => {
@@ -8,6 +8,7 @@ const AllFoods = () => {
     const [foods, setFoods] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
+    const [sortCriteria, setSortCriteria] = useState("default");
 
     useEffect(() => {
         fetch("https://fodis-server.vercel.app/allFood")
@@ -23,7 +24,28 @@ const AllFoods = () => {
         setSearchTerm(event.target.value);
     };
 
-    const filteredFoods = foods.filter((food) =>
+    const handleSortChange = (event) => {
+        setSortCriteria(event.target.value);
+    };
+
+    const sortedFoods = [...foods].sort((a, b) => {
+        if (sortCriteria === "price-asc") {
+            return a.price - b.price;
+        } else if (sortCriteria === "price-desc") {
+            return b.price - a.price;
+        } else if (sortCriteria === "name-asc") {
+            return a.name.localeCompare(b.name);
+        } else if (sortCriteria === "name-desc") {
+            return b.name.localeCompare(a.name);
+        } else if (sortCriteria === "rating-desc") {
+            return b.rating - a.rating;
+        } else if (sortCriteria === "rating-asc") {
+            return a.rating - b.rating;
+        }
+        return 0;
+    });
+
+    const filteredFoods = sortedFoods.filter((food) =>
         food.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -55,21 +77,40 @@ const AllFoods = () => {
             <div className="bg-gray-100 p-8 text-black flex items-center justify-between">
                 <h1 className="text-3xl font-bold">All Foods</h1>
 
-                {/* Search Bar with Button */}
-                <div className="flex items-center space-x-2">
-                    <input
-                        type="text"
-                        placeholder="Search by name..."
-                        value={searchTerm}
-                        onChange={handleSearch}
-                        className="p-2 text-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-                    />
-                    <button
-                        onClick={() => setSearchTerm(searchTerm)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                    >
-                        Search
-                    </button>
+                <div className="flex items-center space-x-4">
+                    {/* Search Bar with Button */}
+                    <div className="flex items-center space-x-2">
+                        <input
+                            type="text"
+                            placeholder="Search by name..."
+                            value={searchTerm}
+                            onChange={handleSearch}
+                            className="p-2 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                        />
+                        <button
+                            onClick={() => setSearchTerm(searchTerm)}
+                            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                        >
+                            Search
+                        </button>
+                    </div>
+
+                    {/* Sort Dropdown */}
+                    <div className="ml-4">
+                        <select
+                            value={sortCriteria}
+                            onChange={handleSortChange}
+                            className="p-2 text-red-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            <option value="default" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Sort By</option>
+                            <option value="price-asc " className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Price: Low to High</option>
+                            <option value="price-desc" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Price: High to Low</option>
+                            <option value="name-asc" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Name: A to Z</option>
+                            <option value="name-desc" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Name: Z to A</option>
+                            <option value="rating-asc"className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Rating: Low to High</option>
+                            <option value="rating-desc"className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Rating: High to Low</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -104,18 +145,17 @@ const AllFoods = () => {
                                 <div className="mt-4">
                                     <button
                                         onClick={() => handlePurchaseClick(food._id)}
-                                        className={`btn ${
-                                            isOutOfStock || (user && isOwner)
+                                        className={`btn ${isOutOfStock || (user && isOwner)
                                                 ? "btn-disabled"
                                                 : "btn-primary"
-                                        }`}
+                                            }`}
                                         disabled={isOutOfStock || (user && isOwner)}
                                     >
                                         {isOutOfStock
                                             ? "Out of Stock"
                                             : user && isOwner
-                                            ? "Your Item"
-                                            : "Purchase"}
+                                                ? "Your Item"
+                                                : "Purchase"}
                                     </button>
                                 </div>
                             </div>

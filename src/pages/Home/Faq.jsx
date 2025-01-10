@@ -7,7 +7,7 @@ const Faq = () => {
             <div>
                 <h1 className=' text-6xl font-bold text-center my-24'>Frequently Asked Questions</h1>
             </div>
-            <div className="hero mb-24 font-Lato text-white">
+            <div className="hero mb-24 font-Lato text-sky-600">
                 <div className="hero-content flex justify-between flex-col lg:flex-row gap-4 p-6 rounded-lg border-2 mt-2 w-full">
                     <div>
                         <Lottie animationData={faqImage} className='h-96 w-96 rounded-lg' />
