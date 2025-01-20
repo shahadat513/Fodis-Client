@@ -6,7 +6,7 @@ const AllFoods = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate(); // For navigation
     const [foods, setFoods] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);-
     const [searchTerm, setSearchTerm] = useState("");
     const [sortCriteria, setSortCriteria] = useState("default");
 
