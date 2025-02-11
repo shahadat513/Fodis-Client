@@ -2,7 +2,8 @@
 
 **Live Website:** [Fodis](https://fodis-client.web.app/)
 
-![Project Screenshot]https://i.ibb.co.com/xS28VzkX/image.png
+Project Screenshot: https://i.ibb.co.com/xS28VzkX/image.png
+
 ## 📌 Project Overview
 Fodis is a full-stack restaurant management web application built using the MERN stack. It provides an engaging user experience for customers and staff, streamlining food ordering, inventory management, and online interactions.
 
