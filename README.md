@@ -2,7 +2,7 @@
 
 **Live Website:** [Fodis](https://fodis-client.web.app/)
 
-![Project Screenshot](./screenshot.png)  
+![Project Screenshot]([./screenshot.png](https://i.ibb.co.com/xS28VzkX/image.png))  
 *(Replace with an actual screenshot of the project UI)*
 
 ## 📌 Project Overview
