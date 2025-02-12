@@ -1,7 +1,7 @@
 
 const Contact = () => {
     return (
-      <div className=" py-12 text-white">
+      <div className=" py-12 bg-[#acb9c2] text-white">
         <div className="max-w-5xl mx-auto px-6">
           <h1 className="text-5xl font-extrabold text-center mb-8">Get In Touch</h1>
           <p className="text-lg text-center mb-10 leading-8">
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300"
+                  className="w-full bg-[#8eef45] text-white py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300"
                 >
                   Send Message
                 </button>

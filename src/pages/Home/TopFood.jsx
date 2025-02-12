@@ -72,7 +72,7 @@ const TopFood = () => {
                                     className={`btn ${
                                         isOutOfStock || (user && isOwner)
                                             ? "btn-disabled"
-                                            : "btn-primary"
+                                            : "btn border-[#bd58e5]  btn-outline "
                                     }`}
                                     disabled={isOutOfStock || (user && isOwner)}
                                 >
@@ -80,7 +80,7 @@ const TopFood = () => {
                                         ? "Out of Stock"
                                         : user && isOwner
                                         ? "Your Item"
-                                        : "Purchase"}
+                                        : "See Details"}
                                 </button>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ const TopFood = () => {
             </div>
             <div className="text-center mt-8">
                 <NavLink to="/allFoods">
-                    <button className="btn bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 text-white px-4 py-2 rounded-lg">
+                    <button className="btn bg-[#8eef45] text-black px-4 py-2 rounded-lg">
                         See All
                     </button>
                 </NavLink>

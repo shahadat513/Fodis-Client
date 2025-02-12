@@ -12,7 +12,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <TopFood></TopFood>
-            <Menu></Menu>
+            <div className="bg-[#a190d6] pb-6">
+                <Menu></Menu>
+            </div>
             <Special></Special>
             <Event></Event>
             <About></About>

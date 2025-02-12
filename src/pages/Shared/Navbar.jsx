@@ -14,9 +14,9 @@ const Navbar = () => {
     };
 
     return (
-        <div 
-        className="sticky top-0 z-50 bg-transparent backdrop-blur-sm"
-        style={{ backgroundColor: isDarkMode ? '#1a1a1a' : '#f3f4f6', color: isDarkMode ? '#ffffff' : '#000000' }}>
+        <div
+            className="sticky top-0 z-50 bg-transparent backdrop-blur-sm"
+            style={{ backgroundColor: isDarkMode ? '#1a1a1a' : '#f3f4f6', color: isDarkMode ? '#ffffff' : '#000000' }}>
             <div className="navbar w-11/12 mx-auto ">
                 {/* Navbar Start */}
                 <div className="navbar-start">
@@ -50,12 +50,13 @@ const Navbar = () => {
                                 className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
                                 <li><a>Gallery</a></li>
                             </NavLink>
-                            <NavLink to="/MyOrders"
-                                className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
-                                <li><a>My Orders</a></li>
-                            </NavLink>
+
                             {user && (
                                 <>
+                                    <NavLink to="/MyOrders"
+                                        className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                        <li><a>My Orders</a></li>
+                                    </NavLink>
                                     <NavLink to="/addFood"
                                         className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
                                         <li><a>Add Food</a></li>
@@ -97,12 +98,14 @@ const Navbar = () => {
                             className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
                             <li><a>Gallery</a></li>
                         </NavLink>
-                        <NavLink to="/MyOrders"
-                            className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
-                            <li><a>My Orders</a></li>
-                        </NavLink>
                         {user && (
                             <>
+
+                                <NavLink to="/MyOrders"
+                                    className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
+                                    <li><a>My Orders</a></li>
+                                </NavLink>
+
                                 <NavLink to="/addFood"
                                     className={({ isActive }) => (isActive ? "text-primary font-bold" : "text-gray-600")}>
                                     <li><a>Add Food</a></li>
@@ -168,7 +171,12 @@ const Navbar = () => {
                                     </NavLink>
                                 </div>
                             )}
-                            <button onClick={handleLogOut} className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 btn-secondary">
+                            <button
+                                onClick={handleLogOut}
+                                className="btn border-[#bd58e5]  btn-outline"
+                                style={{ text: isDarkMode ? '#000000' : '#ffff' }}
+
+                            >
                                 Sign Out
                             </button>
                         </div>
@@ -176,12 +184,18 @@ const Navbar = () => {
                         <div className="flex justify-end gap-2">
                             <NavLink to="/logIn">
                                 <div>
-                                    <a className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 btn-primary">Log In</a>
+                                    <a
+                                        className="btn border-[#bd58e5]  btn-outline "
+                                        style={{ text: isDarkMode ? '#000000' : '#ffff' }}
+                                    >Log In</a>
                                 </div>
                             </NavLink>
                             <NavLink to="/signup">
                                 <div>
-                                    <a className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 btn-secondary">Sign Up</a>
+                                    <a
+                                        className="btn border-[#bd58e5]  btn-outline "
+                                        style={{ text: isDarkMode ? '#000000' : '#ffff' }}
+                                    >Sign Up</a>
                                 </div>
                             </NavLink>
                         </div>

@@ -1,10 +1,11 @@
 
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-gray-700 text-white  p-10">
+            <footer className="footer bg-[#a190d6] text-white  p-10">
                 <aside>
                     <img
                         className="h-20 w-20"
@@ -18,26 +19,42 @@ const Footer = () => {
                 </aside>
                 <nav>
                     <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link to="/">
+                        <a className="link link-hover">Branding</a>
+                    </Link> <Link to="/">
+                        <a className="link link-hover">Design</a>
+                    </Link> <Link to="/">
+                        <a className="link link-hover">Marketing</a>
+                    </Link> <Link to="/">
+                        <a className="link link-hover">Advertisement</a>
+                    </Link>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link to="/">
+                        <h6 className="footer-title">Company</h6>
+                    </Link>
+                    <Link to="/about">
+                        <a className="link link-hover">About us</a>
+                    </Link>
+                    <Link to="/contact">
+                        <a className="link link-hover">Contact</a>
+                    </Link>
+
+
                 </nav>
                 <nav>
                     <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <Link to="/">
+                        <a className="link link-hover">Terms of use</a>
+                    </Link> <Link to="/">
+                        <a className="link link-hover">Privacy policy</a>
+                    </Link> <Link to="/">
+                        <a className="link link-hover">Cookie policy</a>
+                    </Link>
+
                 </nav>
             </footer>
-            <footer className="footer bg-blue-950  text-white items-center p-4">
+            <footer className="footer bg-[#7e6abc]  text-white items-center p-4">
                 <aside className="grid-flow-col items-center">
                     <img
                         className="h-8 w-8"

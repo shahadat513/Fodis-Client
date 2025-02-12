@@ -6,7 +6,7 @@ const AllFoods = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate(); // For navigation
     const [foods, setFoods] = useState([]);
-    const [loading, setLoading] = useState(true);-
+    const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
     const [sortCriteria, setSortCriteria] = useState("default");
 
@@ -147,7 +147,7 @@ const AllFoods = () => {
                                         onClick={() => handlePurchaseClick(food._id)}
                                         className={`btn ${isOutOfStock || (user && isOwner)
                                                 ? "btn-disabled"
-                                                : "btn-primary"
+                                                : "btn border-[#bd58e5]  btn-outline "
                                             }`}
                                         disabled={isOutOfStock || (user && isOwner)}
                                     >

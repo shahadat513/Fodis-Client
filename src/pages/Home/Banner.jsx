@@ -42,7 +42,7 @@ const Banner = () => {
                                     Experience the finest dining with our exquisite menu crafted by top chefs.
                                 </p>
                                 <Link to="/allFoods">
-                                    <button className="btn bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 btn-primary">Explore All Foods</button>
+                                    <button className="btn border-0 bg-[#bd58e5] ">Explore All Foods</button>
                                 </Link>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const Banner = () => {
                                     Experience the finest dining with our exquisite menu crafted by top chefs.
                                 </p>
                                 <Link to="/allFoods">
-                                    <button className="btn bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 btn-primary">Explore All Foods</button>
+                                    <button className="btn border-0 bg-[#bd58e5] ">Explore All Foods</button>
                                 </Link>
                             </div>
                         </div>
@@ -82,7 +82,7 @@ const Banner = () => {
                                     Experience the finest dining with our exquisite menu crafted by top chefs.
                                 </p>
                                 <Link to="/allFoods">
-                                    <button className="btn bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 btn-primary">Explore All Foods</button>
+                                    <button className="btn border-0 bg-[#bd58e5] ">Explore All Foods</button>
                                 </Link>
                             </div>
                         </div>

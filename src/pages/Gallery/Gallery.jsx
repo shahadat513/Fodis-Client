@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
@@ -20,6 +20,23 @@ const images = [
 const Gallery = () => {
     const [open, setOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const loadImages = async () => {
+            const promises = images.map((src) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = resolve;
+                    img.onerror = resolve;
+                });
+            });
+            await Promise.all(promises);
+            setLoading(false);
+        };
+        loadImages();
+    }, []);
 
     // Handle image click
     const handleImageClick = (index) => {
@@ -39,34 +56,39 @@ const Gallery = () => {
             </div>
             <div>
                 <h1 style={{ textAlign: "center", margin: "20px 0" }}>Image Gallery</h1>
-
-                {/* Image Grid */}
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                        gap: "10px",
-                        padding: "10px",
-                    }}
-                >
-                    {images.map((image, index) => (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Thumbnail ${index + 1}`}
-                            style={{
-                                width: "100%", 
-                                height: "200px", // Fixed height
-                                objectFit: "cover",
-                                cursor: "pointer",
-                                borderRadius: "5px",
-                                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                            }}
-                            onClick={() => handleImageClick(index)}
-                        />
-                    ))}
-                </div>
-
+                
+                {loading ? (
+                    <div className="flex justify-center items-center h-40">
+                        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                ) : (
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                            gap: "10px",
+                            padding: "10px",
+                        }}
+                    >
+                        {images.map((image, index) => (
+                            <img
+                                key={index}
+                                src={image}
+                                alt={`Thumbnail ${index + 1}`}
+                                style={{
+                                    width: "100%", 
+                                    height: "200px", 
+                                    objectFit: "cover",
+                                    cursor: "pointer",
+                                    borderRadius: "5px",
+                                    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+                                }}
+                                onClick={() => handleImageClick(index)}
+                            />
+                        ))}
+                    </div>
+                )}
+                
                 {/* Lightbox */}
                 {open && (
                     <Lightbox

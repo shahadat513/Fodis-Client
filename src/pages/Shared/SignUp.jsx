@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase/firebase.init";
+import { FaGoogle } from "react-icons/fa";
 
 const SignUp = () => {
   const { createUser, manageProfile } = useContext(AuthContext);
@@ -76,7 +77,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-[#acb9c2] min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleSignUp} className="card-body">
@@ -129,18 +130,20 @@ const SignUp = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 btn-primary">Sign Up</button>
+              <button className="btn border-0  bg-[#8eef45]">Sign Up</button>
             </div>
             <NavLink to="/login">
               <label className="label">
                 <span className="text-sm">Already have an account?</span>
-                <span className="label-text-alt link link-hover font-semibold text-blue-500"> Log In</span>
+                <span 
+                className="label-text-alt link link-hover font-semibold text-blue-500"
+                > Log In</span>
               </label>
             </NavLink>
             <hr />
             <div className="form-control mt-6">
-              <button type="button" onClick={handleGoogleSignUp} className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-                <i className="fa-brands fa-google text-red-600"></i> Sign Up With Google
+              <button type="button" onClick={handleGoogleSignUp} className="btn border-[#bd58e5]  btn-outline 0">
+                <i className="fa-brands fa-google text-red-600"></i> <FaGoogle></FaGoogle> Sign Up With Google
               </button>
             </div>
           </form>

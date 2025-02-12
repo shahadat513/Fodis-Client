@@ -15,7 +15,7 @@ const Menu = () => {
     return (
         <>
             <div className="mt-28">
-                <h1 className="text-6xl font-bold text-center mb-2">Fodis Foods Menu</h1>
+                <h1 className="text-6xl font-bold text-center mb-2 pt-7 ">Fodis Foods Menu</h1>
                 <hr className="w-9/12 mx-auto text-black font-bold p-4" />
             </div>
             {
